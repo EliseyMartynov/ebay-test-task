@@ -1,0 +1,70 @@
+@import '../scss/variables';
+
+.primary {
+  display: flex;
+  background: $main-color;
+  color: $main-color--text;
+  transition: 0.2s;
+
+  &:hover,
+  &:focus {
+    background: $main-hover;
+  }
+}
+
+.secondary {
+  background: $secondary-color;
+}
+
+.transparent {
+  background: none;
+}
+
+.remove {
+  background: rgb(248, 61, 61);
+
+  &:hover,
+  &:focus {
+    background: rgb(231, 49, 49);
+  }
+}
+
+.info,
+.close {
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $main-color--text;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.close {
+  position: absolute;
+  border: none;
+  background: $main-color;
+
+  @media (min-width: $mobile) {
+    left: 5px;
+  }
+}
+
+.info,
+.close {
+  &:hover,
+  &:focus {
+    transform: rotate(25deg);
+    transition: 0.4s;
+  }
+}
+
+.info {
+  &:hover,
+  &:focus {
+    background: none;
+  }
+}
+
+.primary:disabled {
+  cursor: not-allowed;
+  background: $main-color-transparensy;
+}

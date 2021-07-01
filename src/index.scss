@@ -1,0 +1,62 @@
+@import 'scss/variables';
+
+:root {
+  font-size: $rem-base;
+}
+
+@media (min-width: $tablet) {
+  :root {
+    font-size: $rem-tablet;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+input::-webkit-search-cancel-button {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+html {
+  background-color: $bg-color;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
