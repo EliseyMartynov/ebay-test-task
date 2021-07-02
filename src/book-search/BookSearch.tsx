@@ -45,15 +45,17 @@ const BookSearch = () => {
     <>
       <section className={styles.bookSearchBox}>
         <div className={styles.mainSide}>
-          <input
-            className={styles.searchInput}
-            tabIndex={1}
-            name="gsearch"
-            type="search"
-            value={bookType}
-            placeholder="Enter your bookname for ex: Javascript"
-            onChange={(e) => searchHandler(e.target.value)}
-          />
+          <form role="search">
+            <input
+              className={styles.searchInput}
+              tabIndex={1}
+              name="gsearch"
+              type="search"
+              value={bookType}
+              placeholder="Enter your bookname for ex: Javascript"
+              onChange={(e) => searchHandler(e.target.value)}
+            />
+          </form>
           <div className={styles.booksBox}>
             {!bookType ? (
               <div className={styles.placeholder}>

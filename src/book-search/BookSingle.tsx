@@ -68,9 +68,10 @@ const BookSingle = ({
           <div className={styles.infoBox}>
             <div className={styles.row}>{title}</div>
             <div className={styles.row}>
-              {`Author${authors.length > 1 ? 's' : ''}: ${
-                authors.length > 1 ? authors.join(', ') : authors[0]
-              }`}
+              {authors &&
+                `Author${authors.length > 1 ? 's' : ''}: ${
+                  authors.length > 1 ? authors.join(', ') : authors[0]
+                }`}
             </div>
             <div className={styles.row}>Publisher: {publisher}</div>
             <div className={styles.row}>Published: {published}</div>
