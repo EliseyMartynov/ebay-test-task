@@ -3,10 +3,7 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
-import sampleResponse from '../../sampleJSONResponse.json';
 import BookSearch from './BookSearch';
-
-const mockData = JSON.parse(JSON.stringify(sampleResponse));
 
 const elements = () => {
   const { getByPlaceholderText, getByText, debug } = render(<BookSearch />);
