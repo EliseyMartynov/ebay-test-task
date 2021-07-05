@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import fetchUrl from '../shared/fetchUrl/fetchUrl';
-import { AllBooks, SingleBook, SingleBookAPI } from './BookSearch.types';
+import { AllBooks, SingleBook, SingleBookDTO } from './index.types';
 
 export async function getBooksByType(type: string) {
   try {
@@ -25,7 +25,7 @@ export function debounceSearch(callback: () => Promise<void>) {
 export function allBooksMapping(allBooks: AllBooks) {
   try {
     const mappedBooks: Array<SingleBook> = allBooks.items.map(
-      (book: SingleBookAPI) => {
+      (book: SingleBookDTO) => {
         const { volumeInfo } = book;
         return {
           id: book.id,

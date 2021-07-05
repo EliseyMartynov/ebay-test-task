@@ -8,7 +8,7 @@ export interface SingleBook {
   description: string;
 }
 
-export interface SingleBookAPI {
+export interface SingleBookDTO {
   id: string;
   volumeInfo: {
     imageLinks?: {
@@ -24,5 +24,5 @@ export interface SingleBookAPI {
 }
 
 export interface AllBooks {
-  items: Array<SingleBookAPI>;
+  items: Array<SingleBookDTO>;
 }

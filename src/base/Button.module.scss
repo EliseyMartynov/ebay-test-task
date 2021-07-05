@@ -33,19 +33,15 @@
 .close {
   justify-content: center;
   align-items: center;
-  border: 1px solid $main-color--text;
   border-radius: 50%;
   transition: 0.4s;
 }
 
 .close {
+  line-height: 100%;
   position: absolute;
   border: none;
   background: $main-color;
-
-  @media (min-width: $mobile) {
-    left: 5px;
-  }
 }
 
 .info,

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import styles from './styles.module.scss';
-import { SingleBook } from './BookSearch.types';
 import Button from '../base/Button';
+import { SingleBook } from './index.types';
+import styles from './styles.module.scss';
 
 interface BookSingleProps {
   book: SingleBook;

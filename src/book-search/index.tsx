@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../base/Button';
 import Skeleton from '../base/Skeleton';
+import BookSingle from './BookSingle';
+import BooksWrapper from './BooksWrapper';
 import {
   addBookToWishList,
   allBooksMapping,
@@ -8,10 +10,8 @@ import {
   deleteFromWishList,
   getBooksByType,
   isBookInWishList,
-} from './BookSearch.service';
-import { SingleBook } from './BookSearch.types';
-import BookSingle from './BookSingle';
-import BooksWrapper from './BooksWrapper';
+} from './index.service';
+import { SingleBook } from './index.types';
 import styles from './styles.module.scss';
 
 const BookSearch = () => {
@@ -40,6 +40,8 @@ const BookSearch = () => {
   };
 
   const [wishList, setWishList] = useState((): Array<SingleBook> => []);
+
+  // Used MDN for accessibility
 
   return (
     <>

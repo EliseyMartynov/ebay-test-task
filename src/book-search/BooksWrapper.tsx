@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import styles from './styles.module.scss';
 
 interface BooksAllProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   skeletonCount: number;
   skeletonElement: (key: number) => ReactElement<any>;
   isLoading: Boolean;
