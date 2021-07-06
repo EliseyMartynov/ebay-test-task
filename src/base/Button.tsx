@@ -25,7 +25,7 @@ const Button = ({
 
   return (
     <button
-      disabled={!!(type === 'disabled')}
+      disabled={type === 'disabled'}
       className={classMerged}
       onClick={onClick}
     >
