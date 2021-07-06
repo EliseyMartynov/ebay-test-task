@@ -1,4 +1,19 @@
 .base {
   display: flex;
-  background: white;
+  background: #fff;
+  animation: base 1s infinite;
+
+  @keyframes base {
+    0% {
+    }
+
+    50% {
+      opacity: 0.3;
+      box-shadow: inset 0px 0px 20px #eee;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 }

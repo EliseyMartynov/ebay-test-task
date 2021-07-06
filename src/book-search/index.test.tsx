@@ -1,14 +1,13 @@
 // first time testing :))
 
-import { render } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import BookSearch from '.';
 
 const defaultMock = () => {
-  const { getByRole, getByPlaceholderText, getByText, debug } = render(
-    <BookSearch />
-  );
+  const { getByRole, getByText, findByText, getByPlaceholderText, debug } =
+    render(<BookSearch />);
 
   const input = getByPlaceholderText('Enter your bookname for ex: Javascript');
   const exampleBtn = getByText('"Javascript"');
@@ -16,6 +15,8 @@ const defaultMock = () => {
 
   return {
     getByRole,
+    getByText,
+    findByText,
     input,
     exampleSpan,
     exampleBtn,
@@ -68,5 +69,29 @@ describe('BookSearch event tests', () => {
     input.focus();
 
     expect(input).toHaveFocus();
+  });
+
+  test('input edge case produces placeholder element', async () => {
+    const { input, findByText } = defaultMock();
+
+    // I don't know why it asks me to write act here
+    // because react-testing-library wraps everything in act themself...
+    // but may be it's older version.
+    act(() => {
+      userEvent.type(
+        input,
+        'Javjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj'
+      );
+    });
+
+    const placeholder = await findByText('Books have not been founded');
+
+    // we can just forget about console.error "cleanup after unmounting"
+    // because I've red some comments that when we have some API calls in our useEffect
+    // it's not even worth it to spend resourses for writing code for that.
+    // https://habr.com/ru/post/493496/ (Russian)
+    expect(placeholder).toBeInTheDocument();
+
+    //anyways I've left that test here
   });
 });
